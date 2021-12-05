@@ -1,0 +1,101 @@
+.card{
+
+    position: relative;
+    @include box(300px, 380px);
+    background: $white;
+    box-shadow: 0 15px 25px rgba(0,0,0,.25);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background .5s;
+
+    .content, .imgText{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .imgText{
+
+        .imgBx{
+            position: relative;
+            @include box(120px,120px);
+            overflow: hidden;
+            border-radius: 50%;
+            margin-bottom: 15px;
+
+            img{
+                @include abs-position(0,auto,auto,0);
+                @include box(100%,100%);
+                object-fit: cover;
+            }
+        }
+
+        h3{
+            font-weight: 500;
+            font-size: 1.4em;
+            line-height: 1.2rem;
+            text-align: center;
+            color: $blue;
+
+            span{
+                font-weight: 400;
+                color: $dark-gray;
+                font-size: .75em;
+            }
+        }
+
+    }
+
+    .sci{
+        display: flex;
+        margin-top: 15px;
+
+        li{
+            list-style: none;
+
+            a{
+
+                position: relative;
+                @include box(50px,50px);
+                color: $blue;
+                background: $light-blue;
+                margin: 0 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                text-decoration: none;
+                font-size: 20px;
+                transition: .5s;
+
+                &:hover{
+                    color: $white;
+                }
+
+                i{
+                    position: relative;
+                    z-index: 1000;
+                }
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    @include box(100%, 100%);
+                    background: $blue;
+                    border-radius: 50%;
+                    transform: scale(0);
+                    transition: .5s;
+                }
+
+                &:hover:before{
+                    transform: scale(1);
+                }
+                
+            }
+        }
+    }
+
+}

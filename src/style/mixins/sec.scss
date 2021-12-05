@@ -1,0 +1,63 @@
+.sec{
+
+    .toggle{
+        @include abs-position(20px,20px,auto,auto);
+        background:$light-blue;
+        @include box(30px,30px);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    
+        &::before{
+            content: '\f186';
+            font-family: fontAwesome;
+            color: $blue;
+        }
+    }
+
+    &.dark{
+
+        background: #24292d;
+        
+        .toggle{
+            background: #404852;
+
+            &:before{
+                content: '\f185';
+                color: $white;
+            }
+        }
+
+        .card{
+            background: #323840;
+
+            .imgText{
+
+                h3{
+
+                    span{
+                        color: #ccc;
+                    }
+
+                }
+
+            }
+
+            .sci{
+
+                li{
+
+                    a{
+                        background: #404852;
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+}
